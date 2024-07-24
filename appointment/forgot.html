@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <!----font owsome---->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!----google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kaushan+Script&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <!----css file---->
+    <link rel="stylesheet" href="appointment.css">
+</head>
+
+<body>
+    <!------Navigation------>
+    <section id="banner" id="top">
+        <nav>
+            <logo>BeautyHub</logo>
+            <ul id="navbar">
+                <li><a href="/beauty.html">Home</a></li>
+                <li><a href="/ReadMore/ReadMore.html">HelpLine</a></li>
+                <li><a href="#footer">Shop</a></li>
+                <li><a href="/appointment/appontment.html" class="main-btn">appointment</a></li>
+            </ul>
+            <i id="active" class="fa fa-bars"></i>
+            <i id="close" class="fa fa-times"></i>
+        </nav>
+    </section>
+
+    <!-------login Form------->
+
+    <div class="container">
+        <div class="input-group">
+            <form action="" onsubmit="return forgotAccForm()">
+
+                <!-------Forgot password------->
+
+                <div id="forgot-open">
+                    <h1>Forgot Password..</h1>
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="email" name="email" id="email" placeholder=" Email@123">
+                    </div>
+                    <p class="right-side-p-tag" id="email-msg"></p>
+                    <div class="input-field">
+                        <i class="fa-solid fa-certificate"></i>
+                        <input type="text" name="number" id="number" placeholder="Verify OTP">
+                        <i class="fa-regular fa-circle-check eye" id="verify"></i>
+                    </div>
+                    <p class="right-side-p-tag" id="number-msg"></p>
+                    <div class="input-field password-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" id="password" placeholder="Create a new Password">
+                        <i id="show" class="fa-solid fa-eye"></i>
+                        <i id="hide" class="fa-solid fa-eye-low-vision"></i>
+                    </div>
+                    <p class="right-side-p-tag" id="pass-msg"></p>
+                    <button type="submit" name="submit" value="submit" id="forgot">Forgot</button>
+
+                    <p>Already have an account?<a href="login.html">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!---Footer-->
+    <section id="footer">
+        <div class="title-text">
+            <p>CONTACT ME</p>
+            <h1>Visit Shop Today</h1>
+        </div>
+        <div class="footer-row">
+            <div class="footer-left">
+                <h1>Openning Hours</h1>
+                <p><i class="fa-solid fa-clock"></i>Monday-Friday:- 9am to 9pm</p>
+                <p><i class="fa-solid fa-clock"></i>Saturday-Sunday:- 8am to 11pm</p>
+            </div>
+            <div class="footer-right">
+                <h1>Get In Touch</h1>
+                <p>Shop Adress:- Rasai Nivas, katraj, pune<i class="fa-solid fa-location-dot"></i></p>
+                <a href="mailto:vaishukunjawal@gmail.com" target="_blank">
+                    <p>vaishukunjawal@gmail.com<i class="fa-solid fa-paper-plane"></i></p>
+                </a>
+                <a href="tel:+91 9011580957 +91 9028953946" target="_blank">
+                    <p>+91 9028953946<i class="fa-solid fa-phone"></i><br> +91 9011580957<i
+                            class="fa-solid fa-phone"></i>
+                </a>
+                </p>
+            </div>
+            <div class="arrow">
+                <a href="#top">
+                    <i class="fa-solid fa-arrow-up fa"></i>
+                </a>
+            </div>
+        </div>
+        <div class="social-link">
+            <i class="fa-brands fa-instagram fa"></i>
+            <i class="fa-brands fa-facebook fa"></i>
+            <i class="fa-brands fa-twitter fa"></i>
+            <i class="fa-brands fa-youtube fa"></i>
+            <p>&copyBeauty Webpage 2023 || Amol Mahor...</p>
+        </div>
+    </section>
+
+    <script>
+
+        // password hide / show 
+        let show = document.getElementById("show");
+        let hide = document.getElementById("hide");
+        let x = document.getElementById("password");
+
+        show.addEventListener("click", function () {
+
+            if (x.type == "password") {
+                x.type = "text";
+                show.style.display = "none";
+                hide.style.display = "block";
+            }
+        })
+
+        function forgotAccForm() {
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("password").value;
+            let number = document.getElementById("number").value;
+
+            // gmail validation
+            if (email == "") {
+                document.getElementById("email-msg").innerHTML = " Please Fill Your email id.";
+                return false;
+            }
+            if (email.indexOf('@') <= 0) {
+                document.getElementById("email-msg").innerHTML = "@ Invalid Position.";
+                return false;
+            }
+            if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
+                document.getElementById("email-msg").innerHTML = " ( . ) Invalid Position.";
+                return false;
+            }
+            // number validation
+            if (number == "") {
+                document.getElementById("number-msg").innerHTML = " Please verify your OTP.";
+            }
+            if (number.length > 6 || (number.length < 6)) {
+                document.getElementById("number-msg").innerHTML = "Only Invalid 6 Character OTP.";
+            }
+
+            // password validation
+            if (pass == "") {
+                document.getElementById("pass-msg").innerHTML = " Please Fill Your password.";
+                return false;
+            }
+            if (pass.length <= 5 || (pass.length >= 8)) {
+                document.getElementById("pass-msg").innerHTML = "Your password must be 5 and 20 lenght..";
+                return false;
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

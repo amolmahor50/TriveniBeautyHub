@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Appointment</title>
+    <!----font owsome---->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!----google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kaushan+Script&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <!----css file---->
+    <link rel="stylesheet" href="appointment.css">
+</head>
+
+<body>
+    <!------Navigation------>
+    <section id="banner" id="top">
+        <nav>
+            <logo>BeautyHub</logo>
+            <ul id="navbar">
+                <li><a href="/beauty.html">Home</a></li>
+                <li><a href="/ReadMore/ReadMore.html">HelpLine</a></li>
+                <li><a href="#footer">Shop</a></li>
+            </ul>
+            <i id="active" class="fa fa-bars"></i>
+            <i id="close" class="fa fa-times"></i>
+        </nav>
+    </section>
+
+    <div class="container">
+        <div class="input-group">
+            <form action="" onsubmit="return validateForm()">
+                <!-------Helpline Form------->
+
+                <div id="help-open">
+                    <h1 id="title">Helpline...</h1>
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="name" id="name" placeholder="Your Name">
+                    </div>
+                    <p class="right-side-p-tag" id="name-msg"></p>
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" name="email" id="email" placeholder=" Email@123">
+                    </div>
+                    <p class="right-side-p-tag" id="email-msg"></p>
+                    <div class="input-field">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="phone" name="phone" id="phone" placeholder="+91 75 ****** 23">
+                    </div>
+                    <p class="right-side-p-tag" id="phone-msg"></p>
+                    <textarea name="massage" class="input-field" placeholder="How Can We help you..?">
+                    </textarea>
+                    <button type="submit" name="submit" value="submit" id="submit">Submit</button>
+                    <p>Already have an account?<a href="login.html">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!---Footer-->
+    <section id="footer">
+        <div class="title-text">
+            <p>CONTACT ME</p>
+            <h1>Visit Shop Today</h1>
+        </div>
+        <div class="footer-row">
+            <div class="footer-left">
+                <h1>Openning Hours</h1>
+                <p><i class="fa-solid fa-clock"></i>Monday-Friday:- 9am to 9pm</p>
+                <p><i class="fa-solid fa-clock"></i>Saturday-Sunday:- 8am to 11pm</p>
+            </div>
+            <div class="footer-right">
+                <h1>Get In Touch</h1>
+                <p>Shop Adress:- Rasai Nivas, katraj, pune<i class="fa-solid fa-location-dot"></i></p>
+                <a href="mailto:vaishukunjawal@gmail.com" target="_blank">
+                    <p>vaishukunjawal@gmail.com<i class="fa-solid fa-paper-plane"></i></p>
+                </a>
+                <a href="tel:+91 9011580957 +91 9028953946" target="_blank">
+                    <p>+91 9028953946<i class="fa-solid fa-phone"></i><br> +91 9011580957<i
+                            class="fa-solid fa-phone"></i>
+                </a>
+                </p>
+            </div>
+            <div class="arrow">
+                <a href="#top">
+                    <i class="fa-solid fa-arrow-up fa"></i>
+                </a>
+            </div>
+        </div>
+        <div class="social-link">
+            <i class="fa-brands fa-instagram fa"></i>
+            <i class="fa-brands fa-facebook fa"></i>
+            <i class="fa-brands fa-twitter fa"></i>
+            <i class="fa-brands fa-youtube fa"></i>
+            <p>&copyBeauty Webpage 2023 || Amol Mahor...</p>
+        </div>
+    </section>
+
+    <!-------Javascript File Link---- -->
+    <script>
+
+        // Password Hide and Show...
+
+        let show = document.getElementById("show");
+        let hide = document.getElementById("hide");
+
+        show.addEventListener("click", function () {
+            let x = document.getElementById("password");
+
+            if (x.type == "password") {
+                x.type = "text";
+                show.style.display = "none";
+                hide.style.display = "block";
+            }
+        })
+        hide.addEventListener("click", function () {
+            let x = document.getElementById("password");
+
+            if (x.type == "text") {
+                x.type = "password";
+                show.style.display = "block";
+                hide.style.display = "none"
+            }
+        })
+
+        // password validation in helpline pages
+        function validateForm() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            // name validation
+            if (name == "") {
+                document.getElementById("name-msg").innerHTML = " Please Fill Your name.";
+                return false;
+            }
+            if (name.length <= 2 || (name.length > 20)) {
+                document.getElementById("name-msg").innerHTML = " Your name must be 2 and 20 lenght.";
+                return false;
+            }
+            if (!isNaN(name)) {
+                document.getElementById("name-msg").innerHTML = "Only character are allowed.";
+                return false;
+            }
+            // gmail validation
+            if (email == "") {
+                document.getElementById("email-msg").innerHTML = " Please Fill Your email id.";
+                return false;
+            }
+            if (email.indexOf('@') <= 0) {
+                document.getElementById("email-msg").innerHTML = "@ Invalid Position.";
+                return false;
+            }
+            if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
+                document.getElementById("email-msg").innerHTML = " ( . ) Invalid Position.";
+                return false;
+            }
+            // phone validation 
+            if (phone == "") {
+                document.getElementById("phone-msg").innerHTML = " Please Fill Your Phone Number.";
+            }
+            if (phone.length <= 10) {
+                document.getElementById("phone-msg").innerHTML = "Your number is less than 10 digit.";
+            }
+            if (phone.length > 10) {
+                document.getElementById("phone-msg").innerHTML = "Your number is gretter than 10 digit.";
+            }
+        }
+    </script>
+</body>
+
+</html>

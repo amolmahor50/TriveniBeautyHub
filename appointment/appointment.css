@@ -1,0 +1,347 @@
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+}
+nav{
+    width: 100%;
+    padding: 5px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    background: #fff;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+nav logo{
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.1rem;
+    background-color: #009688;
+    font-weight: bolder;
+    top: 4%;
+    left: 8%;
+    padding: 0 6px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.9);
+}
+nav ul{
+    width: 100%;
+    text-align: right;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    padding: 5px 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+    transition: .5s;
+    padding-bottom: 6px;
+}
+nav ul li a:hover{
+    border-radius: 4px;
+    background-color:#009688;
+    color: #fff;
+}
+nav ul li .main-btn{
+    display: inline-block;
+    background-color:#009688;
+    text-transform: capitalize;
+    color: #fff;
+    padding: 8px 13px;
+    transition: .5s;
+    border-radius: 3px;
+}
+nav ul li .main-btn:hover{
+    border: none;
+    background-color:#8bd1ca;
+}
+nav .fa{
+    font-size: 35px;
+    color: #000;
+    display: none;
+}
+@media screen and (max-width: 1093px){
+    nav logo{
+        font-size: 60px;
+    }
+    nav #active{
+        display: block;
+        font-size: 50px;
+    }
+    nav #close{
+        display: none;
+        font-size: 50px;
+    }
+    #banner ul{
+        position: fixed;
+        width: 100%;
+        height: 40vh;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+        top: 80px;
+        left: 0;
+        text-align: center;
+        display: none;
+    }
+    nav ul li{
+        display: block;
+        margin: 80px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 22px;
+        font-weight: bold;
+    }
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    padding-top: 100px;
+    background-image: linear-gradient(rgba(0,0,50,0.62),rgba(0,0,50,0.62)),url(login-bg-img.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-group{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 60px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 20px 30px, #fff;
+}
+.right-side-p-tag{
+    color: red;
+    text-align: right;
+    margin-right: 20px;
+    font-weight: 500;
+}
+form h1{
+    color: #555;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+.input-field{
+    margin: 10px 0;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.password-field{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-field:hover{
+    border: 1px solid #009688;
+}
+.input-field i{
+    font-size: 16px;
+    color: #009688;
+    margin-left: 10px;
+    display: inline;
+}
+#verify{
+    margin-left: 105px;
+    cursor: pointer;
+}
+#show, #hide, #show1, #hide1{
+    margin-left: 70px;
+    cursor: pointer;
+}
+#hide1 , #hide{
+    display: none;
+}
+input, form textarea{
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0 13px;
+    font-size: 12pxx;
+}
+textarea{
+    width: 100%;
+}
+p{
+    font-weight: 300;;
+    color: #656161;
+    margin: 10px 0;
+    font-size: 14px;
+}
+p a{
+    margin-left: 5px;
+    font-size: 16px;
+}
+button{
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    outline: none;
+    border: none;
+    background: #009688;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+}
+/* #show{
+    margin-left: 80px;
+    cursor: pointer;
+}
+#hide{
+    margin-left: 80px;
+    cursor: pointer;
+    display: none;
+} */
+@media screen and (max-width: 770px){
+    .container{
+        background-image: none;
+    }
+    .input-group{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .input-field{
+        width: 100%;
+    }
+    
+    /* p a{
+        color: blue;
+        font-weight: bold;
+        letter-spacing: 1px;
+        font-size: 20px;
+    } */
+}
+ /*--------Footer-------*/
+ .title-text{
+    text-align: center;
+    padding-bottom: 70px;
+}
+.title-text p{
+    margin: auto;
+    font-size: 24px;
+    color: #009688;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+.title-text p::after{
+    content: "";
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#019587,#fff);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+    transform: rotate(10deg);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+.title-text h1{
+    font-size: 50px;
+}
+ #footer{
+    padding: 100px 0 20px;
+    background: #efefef;
+    position: relative;
+  }
+  .footer-row{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .footer-left, .footer-right{
+    flex-basis: 45%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .footer-right{
+    text-align: right;
+  }
+  .footer-row h1{
+    margin: 10px 0;
+  }
+  .footer-row p{
+    line-height: 35px;
+  }
+  .footer-left .fa-solid, .footer-right .fa-solid{
+    font-size: 20px;
+    margin: 10px;
+    color: #009688;
+  }
+.social-link{
+    text-align: center;
+}
+.social-link .fa{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    border: 1px solid #009688;
+    border-radius: 8px;
+    margin: 40px 5px 0;
+    color: #009688;
+    cursor: pointer;
+    transition: .5s;
+}
+.social-link .fa:hover{
+    background: #009688;
+    color: #fff;
+    transform: translateY(-15px);
+}
+.social-link p{
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    margin: 50px auto;
+}
+.arrow{
+    top: 20%;
+    right: 5%;
+    margin-top: 30px;
+    position: absolute;
+}
+.arrow .fa{
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 40px;
+    background: #009688;
+    color: #fff;
+    border: 1px solid #009688;
+    border-radius: 8px;
+    transition: 1s;
+}
+.arrow .fa:hover{
+    background: #fff;
+    color: #009688;
+}
+@media screen and (max-width: 770px){
+    .footer-left, .footer-right{
+        flex-basis: 100%;
+        font-size: 14px;
+    }
+}
