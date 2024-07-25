@@ -84,7 +84,7 @@ nav .fa{
     nav ul{
         position: fixed;
         width: 100%;
-        height: 70vh;
+        height: 100vh;
         background-color: #fff;
         box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
         top: 129px;
@@ -101,6 +101,10 @@ nav .fa{
     nav ul li a{
         font-size: 40px;
         font-weight: bold;
+    }
+    nav ul li .main-btn {
+        padding: 20px 30px;
+        border-radius: 20px;
     }
 }
 .container{
@@ -153,9 +157,6 @@ nav .fa{
     padding: 40px;
     animation: slide-in 2000ms;
 }
-.feature1:nth-child(2){
-    animation: slide-out 4000ms;
-}
 .feature1 h2{
     font-size: 30px;
     font-weight: bolder;
@@ -169,32 +170,14 @@ nav .fa{
 }
 .feature1-img{
     flex-basis: 50%;
-    animation: slide-out 4000ms;
 }
 .feature1-img:nth-child(2){
     flex-basis: 50%;
-    animation: slide-in 2000ms;
 }
 .feature1-img img{
     width: 70%;
     border-radius: 10px;
 }
-@keyframes slide-in {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0%);
-    }
-  }
-  @keyframes slide-out {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0%);
-    }
-  }
 /*----gift card----*/
 #gift{
     width: 1250px;
@@ -225,20 +208,7 @@ nav .fa{
 }
 .gift-img{
     flex-basis: 50%;
-    animation: drop-in 3000ms;
 }
-@keyframes drop-in {
-    from {
-      transform:
-        rotate(-30deg) translateY(-100%);
-      opacity: 0;
-    }
-    to {
-      transform:
-        rotate(0deg) translateY(0%);
-      opacity: 1;
-    }
-  }
 .gift-img img{
     width: 100%;
     border-radius: 10px;
@@ -257,37 +227,6 @@ nav .fa{
     animation: grow-and-shrink 4000ms;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-@keyframes grow-and-shrink {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-@media screen and (max-width: 770px) {
-    .feature1 h2{
-        font-size: 50px;
-    }
-    .feature1 h1{
-        font-size: 45px;
-    }
-    .feature1 p{
-        font-size: 35px;
-    }
-    .feature1{
-        flex-basis: 100%;
-    }
-    .feature1 button{
-        font-size: 30px;
-    }
-    .feature1-img{
-        flex-basis: 100%;
-    }
-    #gift .feature1-box img{
-        width: 100%;
-    }
-}
 /*-----Home Services------*/
 .content{
     width: 900px;
@@ -304,19 +243,12 @@ nav .fa{
     margin: 15px;
     text-align: center;
 }
-@media screen and (max-width: 770px){
-    .content h2{
-        font-size: 50px;
-    }
-    .content p{
-        font-size: 35px;
-    }
-}
  /*--------Footer-------*/
  #footer{
+    width: 100%;
     padding: 100px 0 20px;
-    background: #efefef;
     position: relative;
+    background: #efefef;
   }
   .footer-row{
     width: 80%;
@@ -326,7 +258,7 @@ nav .fa{
     flex-wrap: wrap;
   }
   .footer-left, .footer-right{
-    flex-basis: 40%;
+    flex-basis: 45%;
     padding: 10px;
     margin-bottom: 20px;
   }
@@ -393,14 +325,97 @@ nav .fa{
     color: #009688;
 }
 @media screen and (max-width: 770px){
-    #footer{
+    .title-text p{
+        font-size: 35px;
+    }
+    .title-text h1{
+        font-size: 60px;
+    }
+    .container{
+        margin-top: 250px;
+    }
+    .feature1-box{
         width: 100%;
     }
-    .footer-row{
-        width: 100%;
+    .feature1{
+        flex-basis: 95%;
+        margin: auto;
     }
-    .footer-left, .footer-right{
+    .feature1 h2{
+        font-size: 30px;
+    }
+    .feature1 p{
+        font-size: 16px;
+    }
+    .feature1-img{
+        flex-basis: 90%;
+    }
+    .feature1-img:nth-child(2){
+        flex-basis: 90%;
+    }
+    .feature1-img img{
+        width: 90%;
+    }
+    .feature1 h1{
+        font-size: 30px;
+    }
+    .feature1 p {
+        font-size: 26px;
+    }
+    .feature1 button{
+        padding: 15px 25px;
+        font-size: 24px;
+    }
+    .gift-img{
         flex-basis: 100%;
-        font-size: 14px;
+    }
+    .content h2{
+        font-size: 50px;
+    }
+    .content p{
+        font-size: 35px;
+    }
+    #footer{
+        width: 1250px;
+      }
+      .footer-row{
+        width: 85%;
+        flex-direction: column;
+      }
+      .footer-left, .footer-right{
+        flex-basis: 100%;
+      }
+      .footer-row h1{
+        font-size: 50px;
+      }
+      .footer-row p{
+        font-size: 25px;
+      }
+      .footer-left .fa-solid, .footer-right .fa-solid{
+        font-size: 25px;
+      }
+    .social-link .fa{
+        width: 150px;
+        height: 150px;
+        font-size: 90px;
+        line-height: 150px;
+    }
+    .social-link .fa:hover{
+        background: #009688;
+        color: #fff;
+        transform: translateY(-15px);
+    }
+    .social-link p{
+        font-size: 50px;
+    }
+    .arrow{
+        right: 8%;
+    }
+    .arrow .fa{
+        text-align: center;
+        width:100px;
+        height:100px;
+        font-size: 60px;
+        line-height:100px;
     }
 }
